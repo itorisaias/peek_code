@@ -11,28 +11,10 @@ We here at Peek are big fans of GraphQL. We like the benefits it provides over a
 strong typing, the flexibility for the client to request exactly what they need, and the automatic documentation it
 provides.
 
-You can learn more about GraphQL from the official getting started guide at
-[graphql.org/learn](https://graphql.org/learn/)
-
-We would like for you to do a deep-dive into GraphQL and use the knowledge gained to develop a web API. The domain and
-challenges are similar to the types of problems we have had to solve here at Peek, and we believe working on this
-challenge will give insight into the types of technical tasks you might face as a developer here. Please choose any
-language you're comfortable with. Although we primarily use Elixir at Peek, **learning elixir is not expected for this
-challenge.**
-
-## Expected Time & Effort
-
-We don't want you to have to take too much time with this challenge. Try and keep time spent to a typical day, maybe 4-6
-hours, but please not more than 8.
-
 ## Problem Description
 
 We need to build a simple order management API. This API should accept placement of orders and payments for those
 orders. But, we don't want to require full payment up front. We'd like to allow installment payments over time as well.
-
-### Models
-
-Let's start by defining the models we might need.
 
 #### Orders
 

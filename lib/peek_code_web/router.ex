@@ -16,7 +16,6 @@ defmodule PeekCodeWeb.Router do
 
   scope "/", PeekCodeWeb do
     pipe_through :browser
-
     live "/", PageLive, :index
   end
 
@@ -32,6 +31,16 @@ defmodule PeekCodeWeb.Router do
   # If your application does not have an admins-only section yet,
   # you can use Plug.BasicAuth to set up some basic authentication
   # as long as you are also using SSL (which you should anyway).
+  # coveralls-ignore-start
+
+    scope "/graphql" do
+      pipe_through :api
+      forward "/server", Absinthe.Plug, schema: PeekCodeGraphql.Schema, json_codec: Jason
+      forward "/ui", Absinthe.Plug.GraphiQL,
+        schema: PeekCodeGraphql.Schema,
+        json_codec: Jason
+    end
+
   if Mix.env() in [:dev, :test] do
     import Phoenix.LiveDashboard.Router
 
@@ -40,4 +49,5 @@ defmodule PeekCodeWeb.Router do
       live_dashboard "/dashboard", metrics: PeekCodeWeb.Telemetry
     end
   end
+  # coveralls-ignore-stop
 end

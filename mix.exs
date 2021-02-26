@@ -57,7 +57,13 @@ defmodule PeekCode.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:excoveralls, "~> 0.13", only: :test},
       {:credo, "~> 1.4", only: :dev, runttime: false},
-      {:sobelow, "~> 0.8"}
+      {:sobelow, "~> 0.8"},
+      {:absinthe, "~> 1.4", override: true},
+      {:absinthe_plug, "~> 1.5"},
+      {:absinthe_relay, "~> 1.4"},
+      {:absinthe_ecto, "~> 0.1.3"},
+      {:absinthe_error_payload, "~> 1.1"},
+      {:absinthe_phoenix, "~> 2.0.0"}
     ]
   end
 
