@@ -10,6 +10,5 @@ defmodule PeekCode.Repo.Migrations.CreateOrders do
 
       timestamps()
     end
-
   end
 end

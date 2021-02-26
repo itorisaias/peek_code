@@ -55,7 +55,6 @@ defmodule PeekCode.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-
       {:excoveralls, "~> 0.13", only: :test},
       {:credo, "~> 1.4", only: :dev, runttime: false},
       {:sobelow, "~> 0.8"}

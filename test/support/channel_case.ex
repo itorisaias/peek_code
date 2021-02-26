@@ -16,6 +16,7 @@ defmodule PeekCodeWeb.ChannelCase do
   """
 
   use ExUnit.CaseTemplate
+  alias Ecto.Adapters.SQL.Sandbox
 
   using do
     quote do
@@ -29,10 +30,10 @@ defmodule PeekCodeWeb.ChannelCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(PeekCode.Repo)
+    :ok = Sandbox.checkout(PeekCode.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(PeekCode.Repo, {:shared, self()})
+      Sandbox.mode(PeekCode.Repo, {:shared, self()})
     end
 
     :ok
