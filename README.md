@@ -1,3 +1,8 @@
+[![codecov](https://codecov.io/gh/theguuholi/peek_code/branch/main/graph/badge.svg?token=MCPYCP2HEI)](https://codecov.io/gh/theguuholi/peek_code)
+
+[![Pipeline Status](https://github.com/theguuholi/peek_code/workflows/CI/badge.svg)](https://github.com/theguuholi/peek_code/actions)
+
+
 # GraphQL back-end API take-home challenge
 
 ![gql+peek](https://user-images.githubusercontent.com/221693/62170358-f89cfd80-b2df-11e9-9488-e913f1866613.png)
