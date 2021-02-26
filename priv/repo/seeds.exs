@@ -1,11 +1,38 @@
-# Script for populating the database. You can run it as:
-#
-#     mix run priv/repo/seeds.exs
-#
-# Inside the script, you can read and write to any of your
-# repositories directly:
-#
-#     PeekCode.Repo.insert!(%PeekCode.SomeSchema{})
-#
-# We recommend using the bang functions (`insert!`, `update!`
-# and so on) as they will fail if something goes wrong.
+alias PeekCode.{Order, Payment, Repo}
+
+Order.changeset(%Order{}, %{
+  description: "MacBook",
+  total: 100.99,
+  payments: [
+    %{
+      amount: 10.0,
+      applied_at: NaiveDateTime.utc_now(),
+      note: "payment for this month"
+    }
+  ]
+})
+|> Repo.insert!()
+
+Order.changeset(%Order{}, %{
+  description: "MacBook",
+  total: 100.99
+})
+|> Repo.insert!()
+
+Order.changeset(%Order{}, %{
+  description: "MacBook",
+  total: 100.99,
+  payments: [
+    %{
+      amount: 10.0,
+      applied_at: NaiveDateTime.utc_now(),
+      note: "payment for this month"
+    },
+    %{
+      amount: 22.0,
+      applied_at: NaiveDateTime.utc_now(),
+      note: "payment for this month"
+    }
+  ]
+})
+|> Repo.insert!()
