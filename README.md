@@ -82,3 +82,27 @@ query auto-completion, etc.
 
 You can also find many possibly useful links from the
 [Awesome GraphQL list](https://github.com/chentsulin/awesome-graphql).
+
+
+# Payload
+
+mutation{
+  createOrder(payload: {description: "Macbook", total: 1000.0,
+    payments: {
+      amount: 10.5,
+      appliedAt: "2021-02-26T22:33:40.999287",
+      note: "simple payment"
+    }
+  }){
+    balanceDue
+    description
+    id
+    payments{
+      amount
+      appliedAt
+      id
+      note
+    }
+    total
+  }
+}

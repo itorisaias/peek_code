@@ -13,5 +13,6 @@ defmodule PeekCodeGraphql.Schema.Types.OrderType do
   input_object :order_input_type do
     field :description, :string
     field :total, :float
+    field :payments, list_of(:payment_input_type)
   end
 end

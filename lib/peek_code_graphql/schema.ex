@@ -15,11 +15,12 @@ defmodule PeekCodeGraphql.Schema do
     end
   end
 
-  # mutation do
-  #   @desc "Register an Order"
-  #   field :create_order, type: :order_type do
-  #     arg(:payload, non_null(:order_input_type))
-  #   end
-  # end
+  mutation do
+    @desc "Register an Order"
+    field :create_order, type: :order_type do
+      arg(:payload, non_null(:order_input_type))
+      resolve(&Resolvers.OrderResolver.create_order/3)
+    end
+  end
 
 end
