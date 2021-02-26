@@ -1,0 +1,14 @@
+{
+  "skip_files": [
+    "deps/*",
+    "lib/quest_service_web/views/error_helpers.ex",
+    "lib/quest_service_web/plugs/telemetry.ex",
+    "test/support/data_case.ex",
+    "lib/quest_service/application.ex"
+  ],
+  "coverage_options": {
+    "treat_no_relevant_lines_as_covered": true,
+    "output_dir": "cover/",
+    "minimum_coverage": 97
+  }
+}
