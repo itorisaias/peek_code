@@ -3,6 +3,7 @@ defmodule PeekCodeGraphql.Schema.Types.OrderType do
   use Absinthe.Ecto, repo: PeekCode.Repo
 
   object :order_type do
+    field :id, :string
     field :balance_due, :float
     field :description, :string
     field :total, :float
