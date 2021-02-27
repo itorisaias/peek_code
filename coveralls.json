@@ -5,7 +5,9 @@
     "lib/peek_code_web.ex",
     "test/support/data_case.ex",
     "test/support/channel_case.ex",
-    "lib/peek_code/application.ex"
+    "lib/peek_code/application.ex",
+    "lib/peek_code_web/live/page_live.ex",
+    "lib/peek_code_graphql/*"
   ],
   "coverage_options": {
     "treat_no_relevant_lines_as_covered": true,

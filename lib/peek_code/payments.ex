@@ -12,7 +12,7 @@ defmodule PeekCode.Payments do
     |> build_response(payload)
   end
 
-  defp build_response(nil, _), do: {:error, "this order does not exist"}
+  defp build_response(nil, _), do: {:error, "order does not exist"}
 
   defp build_response(order, payload) do
     verify_if_payment_exist(order, payload)
