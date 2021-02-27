@@ -5,6 +5,7 @@ defmodule PeekCodeGraphql.Schema.Types.PaymentType do
   object :payment_type do
     field :id, :string
     field :order_id, non_null(:string)
+    field :order, :order_type, resolve: assoc(:order)
     field :amount, :float
     field :applied_at, :string
     field :note, :string
