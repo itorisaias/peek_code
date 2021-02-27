@@ -1,7 +1,14 @@
 defmodule PeekCode.OrdersTest do
   use PeekCode.DataCase
 
+  alias PeekCode.Customers
   alias PeekCode.Orders
+
+  @customer %{
+    email: "gustavo@peek.com",
+    first_name: "Gustavo",
+    last_name: "Oliveira"
+  }
 
   @success %{
     description: "MacBook",
@@ -16,7 +23,12 @@ defmodule PeekCode.OrdersTest do
   }
 
   test "list_orders/0 returns all orders" do
-    Orders.create_order(@success)
+    {:ok, customer} = Customers.create_customer(@customer)
+
+    @success
+    |> Map.put(:customer_id, customer.id)
+    |> Orders.create_order()
+
     assert Orders.list_orders() |> Enum.count() == 1
   end
 
@@ -47,11 +59,13 @@ defmodule PeekCode.OrdersTest do
 
   test "create_order/1 should create an order with payment" do
     date = NaiveDateTime.utc_now()
+    {:ok, customer} = Customers.create_customer(@customer)
 
     {:ok, result} =
       %{
         description: "MacBook",
         total: 100.99,
+        customer_id: customer.id,
         payments: [
           %{
             amount: 10.0,
@@ -66,10 +80,13 @@ defmodule PeekCode.OrdersTest do
   end
 
   test "create_order/1 should create an order without payment" do
+    {:ok, customer} = Customers.create_customer(@customer)
+
     {:ok, result} =
       %{
         description: "MacBook",
-        total: 100.99
+        total: 100.99,
+        customer_id: customer.id
       }
       |> Orders.create_order()
 

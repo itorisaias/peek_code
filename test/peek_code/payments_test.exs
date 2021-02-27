@@ -1,10 +1,17 @@
 defmodule PeekCode.PaymentsTest do
   use PeekCode.DataCase
 
+  alias PeekCode.Customers
   alias PeekCode.Orders
   alias PeekCode.Orders.Order
   alias PeekCode.Payments
   alias PeekCode.Repo
+
+  @customer %{
+    email: "gustavo@peek.com",
+    first_name: "Gustavo",
+    last_name: "Oliveira"
+  }
 
   test "apply_payment/1 throw an error because order does not exist" do
     assert {:error, "order does not exist"} ==
@@ -13,11 +20,13 @@ defmodule PeekCode.PaymentsTest do
 
   test "apply_payment/1 throw an error because payment is duplicated" do
     date = NaiveDateTime.utc_now()
+    {:ok, customer} = Customers.create_customer(@customer)
 
     {:ok, order} =
       %{
         description: "MacBook",
         total: 100.99,
+        customer_id: customer.id,
         payments: [
           %{
             amount: 10.0,
@@ -40,11 +49,13 @@ defmodule PeekCode.PaymentsTest do
 
   test "apply_payment/1 should create a payment" do
     date = NaiveDateTime.utc_now()
+    {:ok, customer} = Customers.create_customer(@customer)
 
     {:ok, order} =
       %{
         description: "MacBook",
         total: 100.99,
+        customer_id: customer.id,
         payments: [
           %{
             amount: 10.0,
