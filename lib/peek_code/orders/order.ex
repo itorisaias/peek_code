@@ -1,6 +1,7 @@
 defmodule PeekCode.Orders.Order do
   use Ecto.Schema
   import Ecto.Changeset
+  alias PeekCode.Customers.Customer
   alias PeekCode.Payment.Payment
 
   @primary_key {:id, :binary_id, autogenerate: true}
@@ -9,7 +10,7 @@ defmodule PeekCode.Orders.Order do
     field :balance_due, :float, default: 0.0
     field :description, :string
     field :total, :float
-
+    belongs_to :customer, Customer, foreign_key: :customer_id, type: :binary_id
     has_many :payments, Payment
 
     timestamps()
@@ -18,8 +19,8 @@ defmodule PeekCode.Orders.Order do
   @doc false
   def changeset(order, attrs) do
     order
-    |> cast(attrs, [:description, :total, :balance_due])
-    |> validate_required([:description, :total, :balance_due])
+    |> cast(attrs, [:description, :total, :balance_due, :customer_id])
+    |> validate_required([:description, :total, :balance_due, :customer_id])
     |> cast_assoc(:payments, with: &Payment.changeset/2)
   end
 
