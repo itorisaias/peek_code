@@ -6,7 +6,7 @@ defmodule PeekCodeGraphql.Schema do
 
   import_types(Schema.Types)
   import AbsintheErrorPayload.Payload
-  import_types AbsintheErrorPayload.ValidationMessageTypes
+  import_types(AbsintheErrorPayload.ValidationMessageTypes)
 
   query do
     @desc "Get a list of all orders"
@@ -23,14 +23,14 @@ defmodule PeekCodeGraphql.Schema do
     field :create_order, type: :order_payload do
       arg(:payload, non_null(:order_input_type))
       resolve(&Resolvers.OrderResolver.create_order/3)
-      middleware &build_payload/2
+      middleware(&build_payload/2)
     end
 
     @desc "Apply a Payment"
     field :apply_payment, type: :payment_payload do
       arg(:payload, non_null(:payment_order_input_type))
       resolve(&Resolvers.PaymentResolver.apply_payment/3)
-      middleware &build_payload/2
+      middleware(&build_payload/2)
     end
   end
 end

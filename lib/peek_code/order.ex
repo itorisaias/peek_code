@@ -25,6 +25,15 @@ defmodule PeekCode.Order do
     |> cast_assoc(:payments, with: &Payment.changeset/2)
   end
 
+  @doc false
+  def update_balance_due(order, %{amount: amount}) do
+    attrs = %{balance_due: order.balance_due - amount}
+
+    order
+    |> cast(attrs, [:description, :total, :balance_due])
+    |> validate_required([:description, :total, :balance_due])
+  end
+
   defp get_balance_due(order) do
     order
     |> Map.has_key?(:payments)
