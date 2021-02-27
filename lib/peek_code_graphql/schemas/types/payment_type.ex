@@ -14,5 +14,4 @@ defmodule PeekCodeGraphql.Schema.Types.PaymentType do
     field :applied_at, :string
     field :note, :string
   end
-
 end

@@ -22,5 +22,4 @@ defmodule PeekCodeGraphql.Schema do
       resolve(&Resolvers.OrderResolver.create_order/3)
     end
   end
-
 end

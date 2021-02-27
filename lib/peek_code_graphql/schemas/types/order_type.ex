@@ -10,8 +10,7 @@ defmodule PeekCodeGraphql.Schema.Types.OrderType do
     field(:payments, list_of(:payment_type), resolve: assoc(:payments))
   end
 
-  input_object :
-   do
+  input_object :order_input_type do
     field :description, :string
     field :total, :float
     field :payments, list_of(:payment_input_type)
