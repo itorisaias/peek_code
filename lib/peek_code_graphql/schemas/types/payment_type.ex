@@ -4,14 +4,22 @@ defmodule PeekCodeGraphql.Schema.Types.PaymentType do
 
   object :payment_type do
     field :id, :string
+    field :order_id, non_null(:string)
     field :amount, :float
     field :applied_at, :string
     field :note, :string
   end
 
-  input_object :payment_input_type do
-    field :amount, :float
-    field :applied_at, :string
+  input_object :payment_order_input_type do
+    field :order_id, non_null(:string)
+    field :amount, non_null(:float)
+    field :applied_at, non_null(:string)
     field :note, :string
+  end
+
+  input_object :payment_input_type do
+    field :amount, non_null(:float)
+    field :applied_at, non_null(:string)
+    field :note, non_null(:string)
   end
 end

@@ -1,4 +1,4 @@
-alias PeekCode.{Order, Payment, Repo}
+alias PeekCode.{Order, Repo}
 
 Order.changeset(%Order{}, %{
   description: "MacBook",

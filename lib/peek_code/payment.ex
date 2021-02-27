@@ -17,7 +17,7 @@ defmodule PeekCode.Payment do
   @doc false
   def changeset(payment, attrs) do
     payment
-    |> cast(attrs, [:amount, :applied_at, :note])
-    |> validate_required([:amount, :applied_at, :note])
+    |> cast(attrs, [:amount, :applied_at, :note, :order_id])
+    |> validate_required([:amount, :applied_at])
   end
 end
