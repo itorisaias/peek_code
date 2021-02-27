@@ -19,27 +19,12 @@ cost. And since we're allowing multiple payments, we need to keep track of the b
 It might also be nice to allow clients to request the list of payments that have been applied to an order, so let's
 include that too.
 
-#### Payments
-
-A payment should belong to an order, and just define an amount paid. It's probably also a good idea to keep track of
-
-
-
-* a mutation to apply a payment to an order
-
 ### API Expectations & Extras
 
 At a minimum, we ask the above be implemented, and at least 2 of the following extra expectations that your API will provide:
 
-* All mutations should be idempotent
-  * If a payment is submitted twice, don't overcharge the customer.
 * Explore subscriptions
   * Implement a basic subscription so a client can be notified anytime an order is placed or a payment is made.
-
-
-You can also find many possibly useful links from the
-[Awesome GraphQL list](https://github.com/chentsulin/awesome-graphql).
-
 
 # Payload
 
