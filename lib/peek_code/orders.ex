@@ -38,7 +38,7 @@ defmodule PeekCode.Orders do
         get_balance_due(payments_duplicated > 0, order)
 
       false ->
-        order.total
+        {:ok, order.total}
     end
   end
 

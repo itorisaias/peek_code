@@ -10,6 +10,7 @@ defmodule PeekCodeWeb.Router do
     plug :put_secure_browser_headers
   end
 
+  # coveralls-ignore-start
   pipeline :api do
     plug :accepts, ["json"]
   end
@@ -31,7 +32,6 @@ defmodule PeekCodeWeb.Router do
   # If your application does not have an admins-only section yet,
   # you can use Plug.BasicAuth to set up some basic authentication
   # as long as you are also using SSL (which you should anyway).
-  # coveralls-ignore-start
 
   scope "/graphql" do
     pipe_through :api

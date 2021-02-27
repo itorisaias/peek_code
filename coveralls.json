@@ -1,10 +1,11 @@
 {
   "skip_files": [
     "deps/*",
-    "lib/quest_service_web/views/error_helpers.ex",
-    "lib/quest_service_web/plugs/telemetry.ex",
+    "lib/peek_code_web/views/error_helpers.ex",
+    "lib/peek_code_web.ex",
     "test/support/data_case.ex",
-    "lib/quest_service/application.ex"
+    "test/support/channel_case.ex",
+    "lib/peek_code/application.ex"
   ],
   "coverage_options": {
     "treat_no_relevant_lines_as_covered": true,
