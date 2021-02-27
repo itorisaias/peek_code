@@ -1,7 +1,7 @@
-defmodule PeekCode.Order do
+defmodule PeekCode.Orders.Order do
   use Ecto.Schema
   import Ecto.Changeset
-  alias PeekCode.Payment
+  alias PeekCode.Payment.Payment
 
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id

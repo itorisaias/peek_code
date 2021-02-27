@@ -1,14 +1,6 @@
 defmodule PeekCodeGraphql.Resolvers.OrderResolver do
-  alias PeekCode.Order
-  alias PeekCode.Repo
+  alias PeekCode.Orders
 
-  def list_orders(_, _, _) do
-    {:ok, Repo.all(Order)}
-  end
-
-  def create_order(_, %{payload: payload}, _) do
-    %Order{}
-    |> Order.changeset(payload)
-    |> Repo.insert()
-  end
+  def list_orders(_, _, _), do: {:ok, Orders.list_orders()}
+  def create_order(_, %{payload: payload}, _), do: Orders.create_order(payload)
 end

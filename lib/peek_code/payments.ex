@@ -1,7 +1,8 @@
 defmodule PeekCode.Payments do
-  alias PeekCode.{Order, Payment}
-  alias PeekCode.Repo
   alias Ecto.Multi
+  alias PeekCode.Orders.Order
+  alias PeekCode.Payment.Payment
+  alias PeekCode.Repo
 
   def apply_payment(payload) do
     Order
