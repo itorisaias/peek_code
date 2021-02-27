@@ -17,8 +17,6 @@ defmodule PeekCode.Orders.Order do
 
   @doc false
   def changeset(order, attrs) do
-    attrs = Map.put(attrs, :balance_due, get_balance_due(attrs))
-
     order
     |> cast(attrs, [:description, :total, :balance_due])
     |> validate_required([:description, :total, :balance_due])
@@ -32,17 +30,5 @@ defmodule PeekCode.Orders.Order do
     order
     |> cast(attrs, [:description, :total, :balance_due])
     |> validate_required([:description, :total, :balance_due])
-  end
-
-  defp get_balance_due(order) do
-    order
-    |> Map.has_key?(:payments)
-    |> case do
-      true ->
-        order.total - (order.payments |> Enum.map(& &1.amount) |> Enum.sum())
-
-      false ->
-        order.total
-    end
   end
 end
