@@ -2,19 +2,12 @@
 
 [![Pipeline Status](https://github.com/theguuholi/peek_code/workflows/CI/badge.svg)](https://github.com/theguuholi/peek_code/actions)
 
-
 # GraphQL back-end API take-home challenge
 
 ![gql+peek](https://user-images.githubusercontent.com/221693/62170358-f89cfd80-b2df-11e9-9488-e913f1866613.png)
 
-We here at Peek are big fans of GraphQL. We like the benefits it provides over a classical REST API, including the
-strong typing, the flexibility for the client to request exactly what they need, and the automatic documentation it
-provides.
-
+We here at Peek are big fans of GraphQL.
 #### Orders
-
-We don't need anything too complex. An order can be as simple as a description of the item(s) purchased, and the total
-cost. And since we're allowing multiple payments, we need to keep track of the balance due.
 
 It might also be nice to allow clients to request the list of payments that have been applied to an order, so let's
 include that too.
@@ -28,39 +21,4 @@ At a minimum, we ask the above be implemented, and at least 2 of the following e
 
 # Payload
 
-mutation{
-  createOrder(payload: {description: "Macbook", total: 1000.0,
-    payments: [{
-      amount: 10.5,
-      appliedAt: "2021-02-26T22:33:40.999287",
-      note: "simple payment"
-    },
-      {
-      amount: 10.5,
-      appliedAt: "2021-02-26T22:33:40.999287",
-      note: "simple payment"
-    }
-    ]
-  }){
-    messages{
-      code
-      field
-      message
-      template
-    }
-    result{
-      balanceDue
-      description
-      id
-      payments{
-        orderId
-        amount
-        appliedAt
-        id
-        note
-      }
-      total
-    }
-  }
-}
-
+Please import the file **peek.json** in insomnia
