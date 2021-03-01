@@ -1,24 +1,76 @@
+* Explore subscriptions
+  * Implement a basic subscription so a client can be notified anytime an order is placed or a payment is made.
+
+
+![gql+peek](https://user-images.githubusercontent.com/221693/62170358-f89cfd80-b2df-11e9-9488-e913f1866613.png)
+
+# GraphQL back-end API PEEK
+
+> We here at Peek are big fans of GraphQL.
+
 [![codecov](https://codecov.io/gh/theguuholi/peek_code/branch/main/graph/badge.svg?token=MCPYCP2HEI)](https://codecov.io/gh/theguuholi/peek_code)
 
 [![Pipeline Status](https://github.com/theguuholi/peek_code/workflows/CI/badge.svg)](https://github.com/theguuholi/peek_code/actions)
 
-# GraphQL back-end API take-home challenge
+[![Author](https://img.shields.io/badge/author-theguuholi-F9B35F?style=flat-square)](https://github.com/theguuholi)
 
-![gql+peek](https://user-images.githubusercontent.com/221693/62170358-f89cfd80-b2df-11e9-9488-e913f1866613.png)
+[![Languages](https://img.shields.io/github/languages/count/theguuholi/peek_code?color=%23F9B35F&style=flat-square)](#)
 
-We here at Peek are big fans of GraphQL.
-#### Orders
 
-It might also be nice to allow clients to request the list of payments that have been applied to an order, so let's
-include that too.
+# :pushpin: Table of Contents
 
-### API Expectations & Extras
+- [GraphQL back-end API PEEK](#graphql-back-end-api-peek)
+- [:pushpin: Table of Contents](#pushpin-table-of-contents)
+- [:rocket: Features](#rocket-features)
+- [:construction_worker: Installation](#construction_worker-installation)
+- [:runner: Getting Started](#runner-getting-started)
+- [:postbox: Faq](#postbox-faq)
+- [:bug: Issues](#bug-issues)
+- [:closed_book: License](#closed_book-license)
 
-At a minimum, we ask the above be implemented, and at least 2 of the following extra expectations that your API will provide:
+# :rocket: Features
 
-* Explore subscriptions
-  * Implement a basic subscription so a client can be notified anytime an order is placed or a payment is made.
+* Orders
+   *  Create Order with Payments
+   *  Create Order
+   *  List Orders
+*  Customer
+   *  Create Customer
+   *  List Customer
+*  Apply Payment to an Order
 
-# Payload
+# :construction_worker: Installation
 
-Please import the file **peek.json** in insomnia
+**You need to have installed on your computer postgress, elixir, node**
+
+```git clone https://github.com/theguuholi/peek_code.git```
+
+
+# :runner: Getting Started
+
+Run the command bellow to configure database, elixir, dependencies and frontend
+
+```mix setup```
+
+
+Run the following command in order to start the application in a development environment:
+
+```mix phx.server```
+
+
+# :postbox: Faq
+
+**Question:** What are the tecnologies used in this project?
+
+**Answer:** please send me an email to more details ```g.92oliveira@gmail.com```
+
+
+# :bug: Issues
+
+Feel free to **file a new issue** with a respective title and description on the the [Peek Code](https://github.com/theguuholi/peek_code/issues) repository. If you already found a solution to your problem, **i would love to review your pull request**! Have a look at our [contribution guidelines](https://github.com/LauraBeatris/goeat-api/blob/master/CONTRIBUTING.md) to find out about the coding standards.
+
+# :closed_book: License
+
+Released in 2021.
+
+Hope peek likes this repo :D [Gustavo Oliveira](https://github.com/theguuholi)
