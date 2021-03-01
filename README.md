@@ -67,7 +67,7 @@ Run the following command in order to start the application in a development env
 
 # :bug: Issues
 
-Feel free to **file a new issue** with a respective title and description on the the [Peek Code](https://github.com/theguuholi/peek_code/issues) repository. If you already found a solution to your problem, **i would love to review your pull request**! Have a look at our [contribution guidelines](https://github.com/LauraBeatris/goeat-api/blob/master/CONTRIBUTING.md) to find out about the coding standards.
+Feel free to **file a new issue** with a respective title and description on the the [Peek Code](https://github.com/theguuholi/peek_code/issues) repository. If you already found a solution to your problem, **i would love to review your pull request**!
 
 # :closed_book: License
 
