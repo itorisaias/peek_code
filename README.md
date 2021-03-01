@@ -24,6 +24,7 @@
 - [:rocket: Features](#rocket-features)
 - [:construction_worker: Installation](#construction_worker-installation)
 - [:runner: Getting Started](#runner-getting-started)
+- [:bomb: Payload](#bomb-payload)
 - [:postbox: Faq](#postbox-faq)
 - [:bug: Issues](#bug-issues)
 - [:closed_book: License](#closed_book-license)
@@ -57,6 +58,9 @@ Run the following command in order to start the application in a development env
 
 ```mix phx.server```
 
+# :bomb: Payload
+
+To test ```peek_code``` in dev or prod please import ```peek.json``` to insomnia  :sunglasses:
 
 # :postbox: Faq
 
