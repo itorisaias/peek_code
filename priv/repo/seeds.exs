@@ -1,8 +1,19 @@
-alias PeekCode.{Order, Repo}
+alias PeekCode.Customers.Customer
+alias PeekCode.Orders.Order
+alias PeekCode.Repo
+
+%Customer{id: customer_id} =
+  Customer.changeset(%Customer{}, %{
+    email: "maria.silva@exemplo.com",
+    first_name: "Maria",
+    last_name: "Silva"
+  })
+  |> Repo.insert!()
 
 Order.changeset(%Order{}, %{
   description: "MacBook",
   total: 100.99,
+  customer_id: customer_id,
   payments: [
     %{
       amount: 10.0,
@@ -15,13 +26,15 @@ Order.changeset(%Order{}, %{
 
 Order.changeset(%Order{}, %{
   description: "MacBook",
-  total: 100.99
+  total: 100.99,
+  customer_id: customer_id
 })
 |> Repo.insert!()
 
 Order.changeset(%Order{}, %{
   description: "MacBook",
   total: 100.99,
+  customer_id: customer_id,
   payments: [
     %{
       amount: 10.0,
